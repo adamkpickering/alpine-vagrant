@@ -6,7 +6,7 @@ $script = <<-'SCRIPT'
 
 # basic development tools
 apk add man-pages git git-doc vim openssh openssh-doc tmux bash bash-doc less \
-	nmap nmap-doc curl curl-doc jq jq-doc tcpdump tcpdump-doc
+	nmap nmap-doc curl curl-doc jq jq-doc tcpdump tcpdump-doc docker
 
 # python
 apk add python3 py3-pip build-base python3-dev openssl-dev libffi-dev
