@@ -20,6 +20,9 @@ mv kubectl /usr/local/bin/kubectl
 # ssh config
 mkdir -p /home/vagrant/.ssh
 printf 'Host github.com\n\tHostname ssh.github.com\n\tPort 443\n\tForwardAgent yes\n' > /home/vagrant/.ssh/config
+
+# make sure .bashrc is run for login shells
+printf 'if [ -f "$HOME/.bashrc" ]; then\n\t. "$HOME/.bashrc"\nfi\n' > /home/vagrant/.profile
 SCRIPT
 
 Vagrant.configure("2") do |config|
