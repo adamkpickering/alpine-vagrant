@@ -24,6 +24,12 @@ chown vagrant:vagrant /home/vagrant/.ssh/config
 
 # make sure .bashrc is run for login shells
 printf 'if [ -f "$HOME/.bashrc" ]; then\n\t. "$HOME/.bashrc"\nfi\n' > /home/vagrant/.profile
+
+# make sure vagrant doesn't have to prepend `sudo ` to docker commands, and
+# ensure the docker service is running
+addgroup vagrant docker
+rc-update add docker default
+rc-service docker start
 SCRIPT
 
 Vagrant.configure("2") do |config|
